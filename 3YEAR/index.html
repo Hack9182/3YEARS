@@ -1,0 +1,719 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>3 Years Together ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+/* FLOATING MEMORY BUTTON */
+
+#memoryButton{
+
+position:fixed;
+right:25px;
+bottom:30px;
+
+padding:16px 28px;
+
+background:#ff4d6d;
+color:white;
+
+border:none;
+border-radius:40px;
+
+font-size:16px;
+cursor:pointer;
+
+box-shadow:0 0 20px #ff4d6d;
+
+animation:memoryGlow 2s infinite;
+
+z-index:2000;
+
+}
+
+@keyframes memoryGlow{
+
+0%{transform:translateY(0);box-shadow:0 0 15px #ff4d6d}
+
+50%{transform:translateY(-8px);box-shadow:0 0 35px #ff99aa}
+
+100%{transform:translateY(0);box-shadow:0 0 15px #ff4d6d}
+
+}
+
+
+/* VIDEO PAGE */
+
+#videoPage{
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(0,0,0,0.9);
+
+display:none;
+
+justify-content:center;
+align-items:center;
+
+z-index:3000;
+
+}
+
+.videoContainer{
+text-align:center;
+color:white;
+}
+
+.videoContainer video{
+
+width:80%;
+max-width:900px;
+border-radius:10px;
+
+}
+
+.closeVideo{
+
+padding:12px 30px;
+border:none;
+border-radius:30px;
+
+background:#ff4d6d;
+color:white;
+
+cursor:pointer;
+
+}
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#fff5f7;
+color:#333;
+overflow-x:hidden;
+}
+
+section{
+padding:80px 20px;
+text-align:center;
+}
+
+.hero{
+height:100vh;
+background:linear-gradient(rgba(255,107,129,0.5),rgba(255,107,129,0.5)),
+url("https://images.unsplash.com/photo-1518199266791-5375a83190b7") center/cover;
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.hero h1{
+font-size:60px;
+font-family:'Dancing Script',cursive;
+}
+
+.hero p{
+font-size:20px;
+}
+
+/* CAKE */
+
+.cake-section{
+background:#fff0f3;
+}
+
+.cake{
+font-size:120px;
+cursor:pointer;
+position:relative;
+display:inline-block;
+}
+
+.candles{
+font-size:30px;
+position:absolute;
+top:-40px;
+left:50%;
+transform:translateX(-50%);
+}
+
+.flame{
+position:absolute;
+top:-20px;
+font-size:22px;
+animation:flicker .4s infinite alternate;
+}
+
+@keyframes flicker{
+from{transform:scale(1)}
+to{transform:scale(1.3)}
+}
+
+.slice{
+position:absolute;
+font-size:80px;
+left:20px;
+top:10px;
+display:none;
+animation:fall 1s forwards;
+}
+
+@keyframes fall{
+0%{transform:translateY(0)}
+100%{transform:translateY(200px) rotate(20deg);opacity:0}
+}
+
+.knife{
+font-size:60px;
+margin-top:40px;
+display:none;
+cursor:pointer;
+}
+
+.cut{
+transform:scale(.9) rotate(-5deg);
+transition:.5s;
+}
+
+#anniversaryText{
+margin-top:40px;
+font-size:50px;
+color:#ff4d6d;
+font-family:'Dancing Script',cursive;
+}
+
+/* STORY */
+
+.story{
+max-width:900px;
+margin:auto;
+}
+
+/* TIMELINE */
+
+.timeline{
+max-width:800px;
+margin:auto;
+text-align:left;
+}
+
+.timeline-item{
+background:white;
+padding:20px;
+margin:20px 0;
+border-left:5px solid #ff6b81;
+box-shadow:0 5px 10px rgba(0,0,0,.1);
+}
+
+
+
+/* LOVE LIST */
+
+.love-list{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+max-width:900px;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 10px rgba(0,0,0,.1);
+}
+
+/* MESSAGE */
+
+.message-box{
+max-width:800px;
+margin:auto;
+background:#f3e6d8;
+padding:60px 50px;
+border-radius:8px;
+box-shadow:0 15px 30px rgba(0,0,0,.15);
+}
+
+.message-title{
+font-size:26px;
+margin-bottom:25px;
+}
+
+.message{
+font-size:24px;
+font-family:'Great Vibes',cursive;
+}
+
+/* FOOTER */
+
+footer{
+background:#ff6b81;
+color:white;
+padding:30px;
+}
+
+/* CONFETTI */
+
+.confetti{
+position:fixed;
+width:10px;
+height:10px;
+top:0;
+animation:confettiFall 3s linear forwards;
+}
+
+@keyframes confettiFall{
+0%{transform:translateY(0)}
+100%{transform:translateY(100vh) rotate(720deg)}
+}
+
+/* HEARTS */
+
+.heart{
+position:fixed;
+font-size:20px;
+color:#ff4d6d;
+animation:floatUp 4s linear forwards;
+}
+
+@keyframes floatUp{
+0%{transform:translateY(0);opacity:1}
+100%{transform:translateY(-400px);opacity:0}
+}
+/* SPARKLES */
+
+.sparkle{
+position:fixed;
+pointer-events:none;
+width:6px;
+height:6px;
+background:white;
+border-radius:50%;
+box-shadow:
+0 0 10px #fff,
+0 0 20px #ff6b81,
+0 0 30px #ff6b81;
+
+animation:sparkleFloat 2s linear forwards;
+}
+
+@keyframes sparkleFloat{
+
+0%{
+transform:scale(0) translateY(0);
+opacity:1;
+}
+
+50%{
+transform:scale(1.5) translateY(-20px);
+opacity:1;
+}
+
+100%{
+transform:scale(0) translateY(-60px);
+opacity:0;
+}
+
+}
+</style>
+</head>
+<!-- FLOATING MEMORY BUTTON -->
+
+<button id="memoryButton" onclick="openVideo()">
+💫 Go Through Memories
+</button>
+
+
+<!-- VIDEO POPUP -->
+
+<div id="videoPage">
+
+<div class="videoContainer">
+
+<h2>VIDEO1</h2>
+
+<video id="memoryVideo" controls>
+<source src="VIDEO1.mp4" type="video/mp4">
+</video>
+
+<br><br>
+
+<button onclick="closeVideo()" class="closeVideo">Close</button>
+
+</div>
+
+</div>
+<body>
+
+<section class="hero">
+<h1>Three Beautiful Years Together ❤️</h1>
+<p>Celebrating our journey, memories, and the future ahead</p>
+</section>
+
+<section class="cake-section">
+
+<h2>Make a Wish 🎂</h2>
+
+<div class="cake" id="cake">
+
+<div class="candles" id="candles">
+🕯️🕯️🕯️
+<div class="flame" id="flame">🔥🔥🔥</div>
+</div>
+
+🎂
+
+<div class="slice" id="slice">🍰</div>
+
+</div>
+
+<div class="knife" id="knife">🔪</div>
+
+<h1 id="anniversaryText"></h1>
+
+</section>
+
+<section>
+<h2>Our Story</h2>
+
+<div class="story">
+<p>
+It all started with a simple hello… and somehow that moment turned into
+three unforgettable years filled with laughter, adventures, and love.
+Every day with you has been a beautiful memory.
+</p>
+</div>
+</section>
+
+<section>
+
+<h2>Our Journey</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<h3>💌 The Proposal</h3>
+<p>Date: 3/3/23</p>
+<p>Place: Aroor Church</p>
+</div>
+
+<div class="timeline-item">
+<h3>🌟 The Beginning</h3>
+<p>Date: 16/3/23</p>
+<p>You accepted the proposal ❤️</p>
+</div>
+
+<div class="timeline-item">
+<h3>💕 First Kiss</h3>
+<p>In front of Bluecap haircut</p>
+</div>
+
+<div class="timeline-item">
+<h3>🌍 First Trip</h3>
+<p>School trip to Ooty</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<section>
+
+<h2>Things I Love About You</h2>
+
+<div class="love-list">
+
+<div class="card">❤️ Your smile</div>
+<div class="card">❤️ Your kindness</div>
+<div class="card">❤️ Your laugh</div>
+<div class="card">❤️ Our memories</div>
+<div class="card">❤️ Our late-night talks</div>
+<div class="card">❤️ Your support</div>
+
+<div class="card">❤️ The way you look at me</div>
+<div class="card">❤️ Your beautiful eyes</div>
+<div class="card">❤️ Your voice</div>
+<div class="card">❤️ Your hugs</div>
+<div class="card">❤️ Your caring heart</div>
+<div class="card">❤️ The way you understand me</div>
+<div class="card">❤️ Your patience</div>
+<div class="card">❤️ Your honesty</div>
+<div class="card">❤️ Your loyalty</div>
+<div class="card">❤️ Your confidence</div>
+<div class="card">❤️ Your little jokes</div>
+<div class="card">❤️ The way you laugh at my jokes</div>
+<div class="card">❤️ The way you listen to me</div>
+<div class="card">❤️ Your warm personality</div>
+<div class="card">❤️ Your kindness to others</div>
+<div class="card">❤️ Your positive energy</div>
+<div class="card">❤️ Your cute expressions</div>
+<div class="card">❤️ Your silly moments</div>
+<div class="card">❤️ Your strong support</div>
+<div class="card">❤️ The way you motivate me</div>
+<div class="card">❤️ The way you believe in me</div>
+<div class="card">❤️ The way you care about my feelings</div>
+<div class="card">❤️ Your beautiful heart</div>
+<div class="card">❤️ The way you forgive</div>
+<div class="card">❤️ The way you comfort me</div>
+<div class="card">❤️ The way you smile when you're happy</div>
+<div class="card">❤️ Your excitement</div>
+<div class="card">❤️ Your passion</div>
+<div class="card">❤️ Your love for life</div>
+<div class="card">❤️ The way you hold my hand</div>
+<div class="card">❤️ Your thoughtful messages</div>
+<div class="card">❤️ Your sweet surprises</div>
+<div class="card">❤️ Your beautiful mind</div>
+<div class="card">❤️ The way you remember little things</div>
+<div class="card">❤️ Your caring nature</div>
+<div class="card">❤️ Your cute jealousy</div>
+<div class="card">❤️ Your hugs that make everything better</div>
+<div class="card">❤️ Your late night talks</div>
+<div class="card">❤️ Your random texts</div>
+<div class="card">❤️ Your laugh that makes my day</div>
+<div class="card">❤️ Your smile in photos</div>
+<div class="card">❤️ Your excitement when you see me</div>
+<div class="card">❤️ Your good morning messages</div>
+<div class="card">❤️ Your good night wishes</div>
+<div class="card">❤️ The way you support my dreams</div>
+<div class="card">❤️ The way you stay beside me</div>
+<div class="card">❤️ The way you make ordinary moments special</div>
+<div class="card">❤️ Your kindness to everyone</div>
+<div class="card">❤️ Your gentle heart</div>
+<div class="card">❤️ Your strong personality</div>
+<div class="card">❤️ Your confidence in us</div>
+<div class="card">❤️ Your warm hugs</div>
+<div class="card">❤️ Your sweet voice</div>
+<div class="card">❤️ Your cute reactions</div>
+<div class="card">❤️ The way you call my name</div>
+<div class="card">❤️ The way you trust me</div>
+<div class="card">❤️ The way you stand by me</div>
+<div class="card">❤️ Your love for adventures</div>
+<div class="card">❤️ Your excitement during trips</div>
+<div class="card">❤️ Your beautiful smile in sunlight</div>
+<div class="card">❤️ Your late night laughs</div>
+<div class="card">❤️ The way you brighten my day</div>
+<div class="card">❤️ The way you understand silence</div>
+<div class="card">❤️ The way you stay strong</div>
+<div class="card">❤️ Your soft heart</div>
+<div class="card">❤️ Your caring messages</div>
+<div class="card">❤️ Your supportive nature</div>
+<div class="card">❤️ The way you make me feel safe</div>
+<div class="card">❤️ The way you celebrate my wins</div>
+<div class="card">❤️ Your positivity</div>
+<div class="card">❤️ Your kindness during tough days</div>
+<div class="card">❤️ Your thoughtful surprises</div>
+<div class="card">❤️ Your patience with me</div>
+<div class="card">❤️ Your understanding</div>
+<div class="card">❤️ Your love for our memories</div>
+<div class="card">❤️ Your beautiful soul</div>
+<div class="card">❤️ The way you complete my life</div>
+<div class="card">❤️ The way you inspire me</div>
+<div class="card">❤️ The way you change my world</div>
+<div class="card">❤️ Your endless love</div>
+<div class="card">❤️ Your sweet heart</div>
+<div class="card">❤️ Your warm smile</div>
+<div class="card">❤️ Your loving hugs</div>
+<div class="card">❤️ Your beautiful presence</div>
+<div class="card">❤️ Your magical laugh</div>
+<div class="card">❤️ The way you look at me</div>
+<div class="card">❤️ The way you love me</div>
+<div class="card">❤️ Everything about you</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="message-box">
+
+<div class="message-title">A Special Message</div>
+
+<div class="message">
+These three years with you have been the most beautiful chapter of my life.
+Every moment with you is a memory I treasure.
+Thank you for being my happiness and my best friend.
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<h2>Happy Anniversary ❤️</h2>
+<p>Here’s to many more memories together.</p>
+</footer>
+
+<script>
+/* SPARKLE ENGINE */
+
+function createSparkle(x,y){
+
+let s=document.createElement("div")
+
+s.className="sparkle"
+
+s.style.left=x+"px"
+s.style.top=y+"px"
+
+document.body.appendChild(s)
+
+setTimeout(()=>s.remove(),2000)
+
+}
+
+/* sparkles everywhere */
+
+setInterval(()=>{
+
+createSparkle(
+Math.random()*window.innerWidth,
+Math.random()*window.innerHeight
+)
+
+},80)
+
+/* mouse sparkle trail */
+
+document.addEventListener("mousemove",(e)=>{
+
+createSparkle(e.clientX,e.clientY)
+
+})
+
+/* click explosion sparkle */
+
+document.addEventListener("click",(e)=>{
+
+for(let i=0;i<20;i++){
+
+setTimeout(()=>{
+
+createSparkle(
+e.clientX+(Math.random()*80-40),
+e.clientY+(Math.random()*80-40)
+)
+
+},i*30)
+
+}
+
+})
+let candlesOff=false
+let cakeCut=false
+
+const cake=document.getElementById("cake")
+const knife=document.getElementById("knife")
+const text=document.getElementById("anniversaryText")
+const slice=document.getElementById("slice")
+const flame=document.getElementById("flame")
+
+cake.addEventListener("click",function(){
+
+if(!candlesOff){
+
+flame.style.display="none"
+knife.style.display="block"
+
+floatingHearts()
+
+candlesOff=true
+
+}
+
+})
+
+knife.addEventListener("click",function(){
+
+if(!cakeCut){
+
+cake.classList.add("cut")
+
+slice.style.display="block"
+
+text.innerHTML="HAPPY ANNIVERSARY ❤️"
+
+confetti()
+
+cakeCut=true
+
+}
+
+})
+
+function confetti(){
+
+for(let i=0;i<120;i++){
+
+let c=document.createElement("div")
+
+c.className="confetti"
+
+c.style.left=Math.random()*100+"vw"
+
+c.style.background=`hsl(${Math.random()*360},100%,50%)`
+
+c.style.animationDuration=(Math.random()*3+2)+"s"
+
+document.body.appendChild(c)
+
+setTimeout(()=>c.remove(),4000)
+
+}
+
+}
+
+function floatingHearts(){
+
+setInterval(()=>{
+
+let heart=document.createElement("div")
+
+heart.className="heart"
+
+heart.innerHTML="❤️"
+
+heart.style.left=Math.random()*100+"vw"
+
+document.body.appendChild(heart)
+
+setTimeout(()=>heart.remove(),4000)
+
+},300)
+
+}
+/* MEMORY VIDEO FUNCTIONS */
+
+function openVideo(){
+
+document.getElementById("videoPage").style.display="flex"
+
+document.getElementById("memoryVideo").play()
+
+}
+
+function closeVideo(){
+
+document.getElementById("videoPage").style.display="none"
+
+document.getElementById("memoryVideo").pause()
+
+}
+</script>
+
+</body>
+</html>
